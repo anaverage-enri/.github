@@ -17,6 +17,8 @@ No sophistacted tech needed, just add or modify anything... as your liking and s
 |  |  +-bug_report.yml
 |  |  +-feature_request.yml
 |  +-workflows
+|  |  +-deploy.yml
+|  |  +-release.yml
 |  +-.gitignore
 |  +-CODE_OF_CONDUCT.md
 |  +-CODEOWNERS
