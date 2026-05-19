@@ -1,0 +1,12 @@
+name: PR Labels
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  labels:
+    uses: anaverage-enri/.github/.github/workflows/labels.yml@main
