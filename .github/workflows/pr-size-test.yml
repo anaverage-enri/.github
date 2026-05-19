@@ -1,0 +1,12 @@
+name: PR Size
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  size:
+    uses: anaverage-enri/.github/.github/workflows/pr-size.yml@main
