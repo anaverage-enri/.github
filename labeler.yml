@@ -1,17 +1,30 @@
 # frontend:
-#   - "web/**"
-#   - "frontend/**"
+#   - changed-files:
+#       - any-glob-to-any-file:
+#           - "web/**"
+#           - "frontend/**"
 #
 # backend:
-#   - "api/**"
-#   - "server/**"
+#   - changed-files:
+#       - any-glob-to-any-file:
+#           - "api/**"
+#           - "server/**"
 
 docs:
-  - "**/*.md"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.md"
 
 ci:
-  - ".github/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/**"
 
 tests:
-  - "**/*test*"
-  - "**/*spec*"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.test.*"
+          - "**/*.spec.*"
+          - "**/*_test.go"
+          - "tests/**"
+          - "**/__tests__/**"
