@@ -2,33 +2,37 @@
 
 Contributor: **[Enri](https://github.com/anaverage-enri)**
 
-This repository acts as a fallback for all of my repositories that don't have an actual `.github` directory with issue/pull request templates, code of conduct and other community health files,...
+A fallback `.github` repository that applies community health files and shared workflows across all of my repositories that don't define their own.
 
-## Development
-
-Pretty straight forward since this is just a fall back `.github` folder.
-No sophisticated tech needed, just add or modify anything... as your liking and suits your personal repositories.
-
-## Current contents
+## Contents
 
 ```
-.github
-├── ISSUE_TEMPLATE
+.
+├── .github/
+│   └── workflows/
+│       ├── labels.yml
+│       ├── pr-size.yml
+│       └── sync-labels.yml
+├── ISSUE_TEMPLATE/
 │   ├── bug_report.yml
 │   ├── config.yml
 │   └── feature_request.yml
-├── workflows
-│   ├── deploy.yml
-│   ├── labels.yml
-│   ├── pr-size.yml
-│   └── realease.yml
-├── .gitignore
 ├── CODE_OF_CONDUCT.md
 ├── CODEOWNERS
+├── labeler.yml
 ├── LICENSE
 ├── PULL_REQUEST_TEMPLATE.md
-├── README.md
-└── labeler.yml
+└── README.md
 ```
 
-### Thank you for checking this out, any suggestion or contribution is welcome! 🤘🏻
+## Workflows
+
+| Workflow | Description |
+|---|---|
+| `labels.yml` | Syncs labels to all repositories |
+| `pr-size.yml` | Automatically labels PRs by size |
+| `sync-labels.yml` | Pushes the label manifest to downstream repos |
+
+---
+
+Any suggestion or contribution is welcome.
