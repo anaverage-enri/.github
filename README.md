@@ -7,24 +7,28 @@ This repository acts as a fallback for all of my repositories that don't have an
 ## Development
 
 Pretty straight forward since this is just a fall back `.github` folder.
-No sophistacted tech needed, just add or modify anything... as your liking and suits your personal repositories.
+No sophisticated tech needed, just add or modify anything... as your liking and suits your personal repositories.
 
 ## Current contents
 
 ```
 .github
-|  +-ISSUE_TEMPLATE
-|  |  +-bug_report.yml
-|  |  +-feature_request.yml
-|  +-workflows
-|  |  +-deploy.yml
-|  |  +-release.yml
-|  +-.gitignore
-|  +-CODE_OF_CONDUCT.md
-|  +-CODEOWNERS
-|  +-LICENSE
-|  +-PULL_REQUEST_TEMPLATE.md
-|  +-README.md
+├── ISSUE_TEMPLATE
+│   ├── bug_report.yml
+│   ├── config.yml
+│   └── feature_request.yml
+├── workflows
+│   ├── deploy.yml
+│   ├── labels.yml
+│   ├── pr-size.yml
+│   └── realease.yml
+├── .gitignore
+├── CODE_OF_CONDUCT.md
+├── CODEOWNERS
+├── LICENSE
+├── PULL_REQUEST_TEMPLATE.md
+├── README.md
+└── labeler.yml
 ```
 
 ### Thank you for checking this out, any suggestion or contribution is welcome! 🤘🏻
