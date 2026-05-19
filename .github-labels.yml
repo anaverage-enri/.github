@@ -1,0 +1,40 @@
+# Centralized label manifest for all consumer repos.
+# Sync via the `sync-labels` reusable workflow.
+
+# --- PR size labels (pascalgn/size-label-action) ---
+- name: "size/XS"
+  color: "3cbf00"
+  description: "0 changed lines"
+
+- name: "size/S"
+  color: "5d9801"
+  description: "<10 changed lines"
+
+- name: "size/M"
+  color: "7f7203"
+  description: "<30 changed lines"
+
+- name: "size/L"
+  color: "a14c05"
+  description: "<100 changed lines"
+
+- name: "size/XL"
+  color: "c32607"
+  description: "<500 changed lines"
+
+- name: "size/XXL"
+  color: "e50009"
+  description: "1000+ changed lines"
+
+# --- Path-based labels (actions/labeler, see labeler.yml) ---
+- name: "docs"
+  color: "0075ca"
+  description: "Documentation changes"
+
+- name: "ci"
+  color: "fbca04"
+  description: "CI/CD and workflow changes"
+
+- name: "tests"
+  color: "c5def5"
+  description: "Test changes"

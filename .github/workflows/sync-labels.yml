@@ -1,0 +1,36 @@
+name: Sync Labels
+
+on:
+  workflow_call:
+    inputs:
+      delete-other-labels:
+        description: "Remove labels not declared in the central manifest."
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      #
+      # Pull the central label manifest from anaverage-enri/.github
+      #
+      - name: Checkout shared label manifest
+        uses: actions/checkout@v4
+        with:
+          repository: anaverage-enri/.github
+          path: .github-config
+
+      #
+      # Apply labels to the caller repository
+      #
+      - name: Sync labels
+        uses: EndBug/label-sync@v2
+        with:
+          config-file: .github-config/.github-labels.yml
+          delete-other-labels: ${{ inputs.delete-other-labels }}
