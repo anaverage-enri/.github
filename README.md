@@ -2,33 +2,88 @@
 
 Contributor: **[Enri](https://github.com/anaverage-enri)**
 
-This repository acts as a fallback for all of my repositories that don't have an actual `.github` directory with issue/pull request templates, code of conduct and other community health files,...
+A fallback `.github` repository that applies community health files and shared workflows across all of my repositories that don't define their own.
 
-## Development
-
-Pretty straight forward since this is just a fall back `.github` folder.
-No sophisticated tech needed, just add or modify anything... as your liking and suits your personal repositories.
-
-## Current contents
+## Contents
 
 ```
-.github
-├── ISSUE_TEMPLATE
+.
+├── .github/
+│   └── workflows/
+│       ├── labels.yml
+│       ├── pr-size.yml
+│       └── sync-labels.yml
+├── ISSUE_TEMPLATE/
 │   ├── bug_report.yml
 │   ├── config.yml
 │   └── feature_request.yml
-├── workflows
-│   ├── deploy.yml
-│   ├── labels.yml
-│   ├── pr-size.yml
-│   └── realease.yml
-├── .gitignore
 ├── CODE_OF_CONDUCT.md
 ├── CODEOWNERS
+├── labeler.yml
 ├── LICENSE
 ├── PULL_REQUEST_TEMPLATE.md
-├── README.md
-└── labeler.yml
+└── README.md
 ```
 
-### Thank you for checking this out, any suggestion or contribution is welcome! 🤘🏻
+## Workflows
+
+| Workflow | Description |
+|---|---|
+| `labels.yml` | Syncs labels to all repositories |
+| `pr-size.yml` | Automatically labels PRs by size |
+| `sync-labels.yml` | Pushes the label manifest to downstream repos |
+
+## Usage in consumer repos
+
+Add thin callers in each consumer repo under `.github/workflows/`.
+
+**PR Labels** — `.github/workflows/labels.yml`
+```yaml
+name: PR Labels
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  labels:
+    uses: anaverage-enri/.github/.github/workflows/labels.yml@main
+```
+
+**PR Size** — `.github/workflows/pr-size.yml`
+```yaml
+name: PR Size
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  size:
+    uses: anaverage-enri/.github/.github/workflows/pr-size.yml@main
+```
+
+**Sync Labels** — `.github/workflows/sync-labels.yml`
+```yaml
+name: Sync Labels
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    uses: anaverage-enri/.github/.github/workflows/sync-labels.yml@main
+    # Optionally:
+    # with:
+    #   delete-other-labels: true
+```
+
+---
+
+Any suggestion or contribution is welcome.
