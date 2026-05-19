@@ -9,4 +9,4 @@ on:
 
 jobs:
   size:
-    uses: anaverage-enri/.github/workflows/pr-size.yml@main
+    uses: anaverage-enri/.github/.github/workflows/pr-size.yml@main
