@@ -1,0 +1,17 @@
+# frontend:
+#   - "web/**"
+#   - "frontend/**"
+#
+# backend:
+#   - "api/**"
+#   - "server/**"
+
+docs:
+  - "**/*.md"
+
+ci:
+  - ".github/**"
+
+tests:
+  - "**/*test*"
+  - "**/*spec*"
