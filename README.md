@@ -10,16 +10,16 @@ A fallback `.github` repository that applies community health files and shared w
 .
 ├── .github/
 │   └── workflows/
-│       ├── labels.yml
-│       ├── pr-size.yml
-│       └── sync-labels.yml
+│       ├── label-sync.yml
+│       ├── path-labeler.yml
+│       └── size-labeler.yml
 ├── ISSUE_TEMPLATE/
 │   ├── bug_report.yml
 │   ├── config.yml
 │   └── feature_request.yml
 ├── CODE_OF_CONDUCT.md
 ├── CODEOWNERS
-├── labeler.yml
+├── path-labels.yml
 ├── LICENSE
 ├── PULL_REQUEST_TEMPLATE.md
 └── README.md
@@ -29,17 +29,17 @@ A fallback `.github` repository that applies community health files and shared w
 
 | Workflow | Description |
 |---|---|
-| `labels.yml` | Syncs labels to all repositories |
-| `pr-size.yml` | Automatically labels PRs by size |
-| `sync-labels.yml` | Pushes the label manifest to downstream repos |
+| `path-labeler.yml` | Labels PRs by changed file paths |
+| `size-labeler.yml` | Labels PRs by size (XS–XXL) |
+| `label-sync.yml` | Syncs repository label definitions from the central manifest |
 
 ## Usage in consumer repos
 
 Add thin callers in each consumer repo under `.github/workflows/`.
 
-**PR Labels** — `.github/workflows/labels.yml`
+**Label PR by Changed Paths** — `.github/workflows/path-labeler.yml`
 ```yaml
-name: PR Labels
+name: Label PR by Changed Paths
 
 on:
   pull_request:
@@ -50,12 +50,12 @@ on:
 
 jobs:
   labels:
-    uses: anaverage-enri/.github/.github/workflows/labels.yml@main
+    uses: anaverage-enri/.github/.github/workflows/path-labeler.yml@main
 ```
 
-**PR Size** — `.github/workflows/pr-size.yml`
+**Label PR by Size** — `.github/workflows/size-labeler.yml`
 ```yaml
-name: PR Size
+name: Label PR by Size
 
 on:
   pull_request:
@@ -66,19 +66,19 @@ on:
 
 jobs:
   size:
-    uses: anaverage-enri/.github/.github/workflows/pr-size.yml@main
+    uses: anaverage-enri/.github/.github/workflows/size-labeler.yml@main
 ```
 
-**Sync Labels** — `.github/workflows/sync-labels.yml`
+**Sync Repository Label Definitions** — `.github/workflows/label-sync.yml`
 ```yaml
-name: Sync Labels
+name: Sync Repository Label Definitions
 
 on:
   workflow_dispatch:
 
 jobs:
   sync:
-    uses: anaverage-enri/.github/.github/workflows/sync-labels.yml@main
+    uses: anaverage-enri/.github/.github/workflows/label-sync.yml@main
     # Optionally:
     # with:
     #   delete-other-labels: true

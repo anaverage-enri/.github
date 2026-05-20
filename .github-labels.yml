@@ -26,7 +26,7 @@
   color: "e50009"
   description: "1000+ changed lines"
 
-# --- Path-based labels (actions/labeler, see labeler.yml) ---
+# --- Path-based labels (actions/labeler, see path-labels.yml) ---
 - name: "docs"
   color: "0075ca"
   description: "Documentation changes"
