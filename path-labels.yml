@@ -1,24 +1,19 @@
-# frontend:
-#   - changed-files:
-#       - any-glob-to-any-file:
-#           - "web/**"
-#           - "frontend/**"
-#
-# backend:
-#   - changed-files:
-#       - any-glob-to-any-file:
-#           - "api/**"
-#           - "server/**"
-
 docs:
   - changed-files:
       - any-glob-to-any-file:
-          - "**/*.md"
+          - "docs/**"
+          - "*.md"
 
-ci:
+workflows:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
+
+github-config:
   - changed-files:
       - any-glob-to-any-file:
           - ".github/**"
+          - "!.github/workflows/**"
 
 tests:
   - changed-files:

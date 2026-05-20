@@ -1,4 +1,4 @@
-name: PR Size Labels
+name: Label PR by Size
 
 on:
   workflow_call:
