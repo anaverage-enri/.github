@@ -16,13 +16,13 @@ jobs:
       # Checkout target repository
       #
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       #
       # Checkout central .github repository
       #
       - name: Checkout shared label config
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: anaverage-enri/.github
           path: .github-config
