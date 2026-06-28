@@ -76,6 +76,10 @@ name: Sync Repository Label Definitions
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   sync:
     uses: anaverage-enri/.github/.github/workflows/label-sync.yml@main
