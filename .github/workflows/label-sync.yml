@@ -37,5 +37,7 @@ jobs:
         uses: EndBug/label-sync@v2
         with:
           config-file: .github-config/.github-labels.yml
-          # Using context fallback ensures it works regardless of how it was triggered
-          delete-other-labels: ${{ inputs.delete-other-labels || github.event.inputs.delete-other-labels }}
+          # The `inputs` context is populated for both workflow_call and workflow_dispatch,
+          # so no github.event.inputs fallback is needed. Avoid `||`: since `false` is falsy,
+          # `false || <empty>` would resolve to an empty string, which the action rejects.
+          delete-other-labels: ${{ inputs.delete-other-labels }}
