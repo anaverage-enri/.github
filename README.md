@@ -19,6 +19,7 @@ A fallback `.github` repository that applies community health files and shared w
 │   └── feature_request.yml
 ├── CODE_OF_CONDUCT.md
 ├── CODEOWNERS
+├── .github-labels.yml
 ├── path-labels.yml
 ├── LICENSE
 ├── PULL_REQUEST_TEMPLATE.md
@@ -31,7 +32,7 @@ A fallback `.github` repository that applies community health files and shared w
 |---|---|
 | `path-labeler.yml` | Labels PRs by changed file paths |
 | `size-labeler.yml` | Labels PRs by size (XS–XXL) |
-| `label-sync.yml` | Syncs repository label definitions from the central manifest |
+| `label-sync.yml` | Syncs repository label definitions from the central `.github-labels.yml` manifest |
 
 ## Usage in consumer repos
 
