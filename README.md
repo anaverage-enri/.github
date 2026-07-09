@@ -19,6 +19,7 @@ A fallback `.github` repository that applies community health files and shared w
 │   └── feature_request.yml
 ├── CODE_OF_CONDUCT.md
 ├── CODEOWNERS
+├── .github-labels.yml
 ├── path-labels.yml
 ├── LICENSE
 ├── PULL_REQUEST_TEMPLATE.md
@@ -31,7 +32,17 @@ A fallback `.github` repository that applies community health files and shared w
 |---|---|
 | `path-labeler.yml` | Labels PRs by changed file paths |
 | `size-labeler.yml` | Labels PRs by size (XS–XXL) |
-| `label-sync.yml` | Syncs repository label definitions from the central manifest |
+| `label-sync.yml` | Syncs repository label definitions from the central `.github-labels.yml` manifest |
+
+## Label configuration
+
+Two files at the repo root drive labeling, and both are read from this repo by the
+reusable workflows:
+
+| File | Purpose | Consumed by |
+|---|---|---|
+| `.github-labels.yml` | The canonical label set — each label's name, color, and description. | `label-sync.yml` |
+| `path-labels.yml` | Maps changed-file globs to labels (e.g. `*.md` → `docs`). | `path-labeler.yml` |
 
 ## Usage in consumer repos
 
