@@ -61,8 +61,10 @@ on:
 
 jobs:
   labels:
-    uses: anaverage-enri/.github/.github/workflows/path-labeler.yml@main
-```
+    permissions:
+      contents: read
+      pull-requests: write
+    uses: anaverage-enri/.github/.github/workflows/path-labeler.yml@main```
 
 **Label PR by Size** — `.github/workflows/size-labeler.yml`
 ```yaml
