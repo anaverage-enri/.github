@@ -4,23 +4,23 @@
 # --- PR size labels (pascalgn/size-label-action) ---
 - name: "size/XS"
   color: "3cbf00"
-  description: "0 changed lines"
+  description: "0–9 changed lines"
 
 - name: "size/S"
   color: "5d9801"
-  description: "<10 changed lines"
+  description: "10–29 changed lines"
 
 - name: "size/M"
   color: "7f7203"
-  description: "<30 changed lines"
+  description: "30–99 changed lines"
 
 - name: "size/L"
   color: "a14c05"
-  description: "<100 changed lines"
+  description: "100–499 changed lines"
 
 - name: "size/XL"
   color: "c32607"
-  description: "<500 changed lines"
+  description: "500–999 changed lines"
 
 - name: "size/XXL"
   color: "e50009"
