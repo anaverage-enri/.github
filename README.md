@@ -61,6 +61,9 @@ on:
 
 jobs:
   labels:
+    permissions:
+      contents: read
+      pull-requests: write
     uses: anaverage-enri/.github/.github/workflows/path-labeler.yml@main
 ```
 
