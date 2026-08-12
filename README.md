@@ -80,6 +80,9 @@ on:
 
 jobs:
   size:
+    permissions:
+      contents: read
+      pull-requests: write
     uses: anaverage-enri/.github/.github/workflows/size-labeler.yml@main
 ```
 
