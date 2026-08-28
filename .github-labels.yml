@@ -70,3 +70,7 @@
 - name: "build"
   color: "b60205"
   description: "Build, bundler, container, and linter configuration changes"
+
+- name: "assets"
+  color: "e99695"
+  description: "Image, font, and media changes"
