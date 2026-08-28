@@ -81,3 +81,14 @@ frontend:
           - "**/*.sass"
           - "**/*.less"
 
+backend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.java"
+          - "**/*.kt"
+          - "**/*.py"
+          - "**/*.go"
+          - "**/*.rb"
+          - "**/*.php"
+          - "**/*.cs"
+
