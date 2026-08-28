@@ -54,3 +54,7 @@
 - name: "shell"
   color: "006b75"
   description: "Shell scripts and dotfile changes"
+
+- name: "notebooks"
+  color: "f9d0c4"
+  description: "Jupyter notebook changes"
