@@ -66,3 +66,18 @@ tests:
           - "**/vitest.config.*"
           - "**/playwright.config.*"
 
+# --- Source ---------------------------------------------------------------
+
+frontend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.vue"
+          - "**/*.svelte"
+          - "**/*.jsx"
+          - "**/*.tsx"
+          - "**/*.html"
+          - "**/*.css"
+          - "**/*.scss"
+          - "**/*.sass"
+          - "**/*.less"
+
