@@ -162,3 +162,19 @@ build:
           - "**/eslint.config.*"
           - "**/.prettierrc*"
 
+assets:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.png"
+          - "**/*.jpg"
+          - "**/*.jpeg"
+          - "**/*.gif"
+          - "**/*.svg"
+          - "**/*.webp"
+          - "**/*.ico"
+          - "**/*.woff"
+          - "**/*.woff2"
+          - "**/*.ttf"
+          - "**/*.otf"
+          - "**/*.mp4"
+
