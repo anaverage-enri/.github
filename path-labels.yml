@@ -1,3 +1,13 @@
+# Maps changed-file globs to labels for `actions/labeler`.
+#
+# Every label used here MUST have a matching entry in `.github-labels.yml`,
+# otherwise `label-sync` will not create it in consumer repos (and would
+# delete it when run with `delete-other-labels: true`).
+#
+# Globs are extension-based rather than directory-based on purpose: this is a
+# fallback config applied to repos whose layout is not controlled here.
+# A file may match several labels — the labeler applies all of them.
+
 docs:
   - changed-files:
       - any-glob-to-any-file:
