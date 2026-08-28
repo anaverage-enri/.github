@@ -178,3 +178,11 @@ assets:
           - "**/*.otf"
           - "**/*.mp4"
 
+# --- Agent / editor tooling ----------------------------------------------
+
+claude:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".claude/**"
+          - "**/CLAUDE.md"
+          - "**/AGENTS.md"
