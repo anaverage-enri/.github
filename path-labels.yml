@@ -42,11 +42,27 @@ github-config:
               - "!.github/workflows/**"
               - "!.github/actions/**"
 
+# --- Tests ---------------------------------------------------------------
+
 tests:
   - changed-files:
       - any-glob-to-any-file:
+          - "tests/**"
+          - "**/test/**"
+          - "spec/**"
+          - "e2e/**"
+          - "cypress/**"
+          - "**/__tests__/**"
           - "**/*.test.*"
           - "**/*.spec.*"
           - "**/*_test.go"
-          - "tests/**"
-          - "**/__tests__/**"
+          - "**/test_*.py"
+          - "**/*_test.py"
+          - "**/conftest.py"
+          - "**/*Test.java"
+          - "**/*Tests.java"
+          - "**/*IT.java"
+          - "**/jest.config.*"
+          - "**/vitest.config.*"
+          - "**/playwright.config.*"
+
