@@ -35,6 +35,10 @@
   color: "fbca04"
   description: "CI/CD and workflow changes"
 
+- name: "github-config"
+  color: "bfd4f2"
+  description: "Repository configuration and community health files"
+
 - name: "tests"
   color: "c5def5"
   description: "Test changes"
