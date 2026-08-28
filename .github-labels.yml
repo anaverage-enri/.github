@@ -62,3 +62,7 @@
 - name: "database"
   color: "0e8a16"
   description: "Schema, migration, and query changes"
+
+- name: "dependencies"
+  color: "0366d6"
+  description: "Dependency manifest and lockfile changes"
