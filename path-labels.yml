@@ -144,3 +144,21 @@ dependencies:
           - "**/go.sum"
           - "**/Brewfile"
 
+build:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/Dockerfile*"
+          - "**/docker-compose*.y*ml"
+          - "**/.dockerignore"
+          - "**/Makefile"
+          - "**/vite.config.*"
+          - "**/nuxt.config.*"
+          - "**/next.config.*"
+          - "**/webpack.config.*"
+          - "**/rollup.config.*"
+          - "**/tsconfig*.json"
+          - "**/babel.config.*"
+          - "**/.eslintrc*"
+          - "**/eslint.config.*"
+          - "**/.prettierrc*"
+
