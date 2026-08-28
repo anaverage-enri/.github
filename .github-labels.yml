@@ -50,3 +50,7 @@
 - name: "backend"
   color: "5319e7"
   description: "Server-side and application logic changes"
+
+- name: "shell"
+  color: "006b75"
+  description: "Shell scripts and dotfile changes"
