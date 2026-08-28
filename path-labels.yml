@@ -28,10 +28,19 @@ ci:
           - ".github/actions/**"
 
 github-config:
-  - changed-files:
-      - any-glob-to-any-file:
-          - ".github/**"
-          - "!.github/workflows/**"
+  - all:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/**"
+              - "ISSUE_TEMPLATE/**"
+              - "**/CODEOWNERS"
+              - "**/PULL_REQUEST_TEMPLATE.md"
+              - "**/CODE_OF_CONDUCT.md"
+              - "**/CONTRIBUTING.md"
+              - "**/SECURITY.md"
+          - all-globs-to-all-files:
+              - "!.github/workflows/**"
+              - "!.github/actions/**"
 
 tests:
   - changed-files:
