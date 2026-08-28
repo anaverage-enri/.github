@@ -92,3 +92,18 @@ backend:
           - "**/*.php"
           - "**/*.cs"
 
+shell:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.sh"
+          - "**/*.bash"
+          - "**/*.zsh"
+          - "**/*.fish"
+          - "**/.zshrc"
+          - "**/.zshenv"
+          - "**/.zprofile"
+          - "**/.bashrc"
+          - "**/.bash_profile"
+          - "**/.profile"
+          - "**/.aliases"
+
