@@ -42,3 +42,7 @@
 - name: "tests"
   color: "c5def5"
   description: "Test changes"
+
+- name: "frontend"
+  color: "d4c5f9"
+  description: "UI, components, and styling changes"
