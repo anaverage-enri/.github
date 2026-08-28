@@ -46,3 +46,7 @@
 - name: "frontend"
   color: "d4c5f9"
   description: "UI, components, and styling changes"
+
+- name: "backend"
+  color: "5319e7"
+  description: "Server-side and application logic changes"
