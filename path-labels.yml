@@ -107,3 +107,8 @@ shell:
           - "**/.profile"
           - "**/.aliases"
 
+notebooks:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.ipynb"
+
