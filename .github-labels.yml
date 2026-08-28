@@ -58,3 +58,7 @@
 - name: "notebooks"
   color: "f9d0c4"
   description: "Jupyter notebook changes"
+
+- name: "database"
+  color: "0e8a16"
+  description: "Schema, migration, and query changes"
