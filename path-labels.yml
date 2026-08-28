@@ -8,11 +8,16 @@
 # fallback config applied to repos whose layout is not controlled here.
 # A file may match several labels — the labeler applies all of them.
 
+# --- Docs & meta ---------------------------------------------------------
+
 docs:
   - changed-files:
       - any-glob-to-any-file:
           - "docs/**"
-          - "*.md"
+          - "**/*.md"
+          - "**/*.mdx"
+          - "**/*.rst"
+          - "**/*.adoc"
 
 workflows:
   - changed-files:
