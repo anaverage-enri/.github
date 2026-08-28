@@ -112,3 +112,11 @@ notebooks:
       - any-glob-to-any-file:
           - "**/*.ipynb"
 
+database:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.sql"
+          - "**/migrations/**"
+          - "supabase/**"
+          - "**/schema.prisma"
+
