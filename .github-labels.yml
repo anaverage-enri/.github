@@ -66,3 +66,7 @@
 - name: "dependencies"
   color: "0366d6"
   description: "Dependency manifest and lockfile changes"
+
+- name: "build"
+  color: "b60205"
+  description: "Build, bundler, container, and linter configuration changes"
