@@ -19,10 +19,13 @@ docs:
           - "**/*.rst"
           - "**/*.adoc"
 
-workflows:
+# --- CI & repository configuration ---------------------------------------
+
+ci:
   - changed-files:
       - any-glob-to-any-file:
           - ".github/workflows/**"
+          - ".github/actions/**"
 
 github-config:
   - changed-files:
