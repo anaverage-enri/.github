@@ -62,7 +62,6 @@ permissions:
 jobs:
   sync:
     uses: anaverage-enri/.github/.github/workflows/label-sync.yml@main
-    Optionally:
     with:
       delete-other-labels: true
 ```
