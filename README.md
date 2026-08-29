@@ -48,23 +48,23 @@ reusable workflows:
 
 Add thin callers in each consumer repo under `.github/workflows/`.
 
-**Label PR by Changed Paths** — `.github/workflows/path-labeler.yml`
+**Sync Repository Label Definitions** — `.github/workflows/label-sync.yml`
 ```yaml
-name: Label PR by Changed Paths
+name: Sync Repository Label Definitions
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
-  labels:
-    permissions:
-      contents: read
-      pull-requests: write
-    uses: anaverage-enri/.github/.github/workflows/path-labeler.yml@main
+  sync:
+    uses: anaverage-enri/.github/.github/workflows/label-sync.yml@main
+    Optionally:
+    with:
+      delete-other-labels: true
 ```
 
 **Label PR by Size** — `.github/workflows/size-labeler.yml`
@@ -86,23 +86,23 @@ jobs:
     uses: anaverage-enri/.github/.github/workflows/size-labeler.yml@main
 ```
 
-**Sync Repository Label Definitions** — `.github/workflows/label-sync.yml`
+**Label PR by Changed Paths** — `.github/workflows/path-labeler.yml`
 ```yaml
-name: Sync Repository Label Definitions
+name: Label PR by Changed Paths
 
 on:
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  issues: write
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
-  sync:
-    uses: anaverage-enri/.github/.github/workflows/label-sync.yml@main
-    # Optionally:
-    # with:
-    #   delete-other-labels: true
+  labels:
+    permissions:
+      contents: read
+      pull-requests: write
+    uses: anaverage-enri/.github/.github/workflows/path-labeler.yml@main
 ```
 
 ---
