@@ -1,25 +1,188 @@
+# Maps changed-file globs to labels for `actions/labeler`.
+#
+# Every label used here MUST have a matching entry in `.github-labels.yml`,
+# otherwise `label-sync` will not create it in consumer repos (and would
+# delete it when run with `delete-other-labels: true`).
+#
+# Globs are extension-based rather than directory-based on purpose: this is a
+# fallback config applied to repos whose layout is not controlled here.
+# A file may match several labels — the labeler applies all of them.
+
+# --- Docs & meta ---------------------------------------------------------
+
 docs:
   - changed-files:
       - any-glob-to-any-file:
           - "docs/**"
-          - "*.md"
+          - "**/*.md"
+          - "**/*.mdx"
+          - "**/*.rst"
+          - "**/*.adoc"
 
-workflows:
+# --- CI & repository configuration ---------------------------------------
+
+ci:
   - changed-files:
       - any-glob-to-any-file:
           - ".github/workflows/**"
+          - ".github/actions/**"
 
 github-config:
-  - changed-files:
-      - any-glob-to-any-file:
-          - ".github/**"
-          - "!.github/workflows/**"
+  - all:
+      - changed-files:
+          - any-glob-to-any-file:
+              - ".github/**"
+              - "ISSUE_TEMPLATE/**"
+              - "**/CODEOWNERS"
+              - "**/PULL_REQUEST_TEMPLATE.md"
+              - "**/CODE_OF_CONDUCT.md"
+              - "**/CONTRIBUTING.md"
+              - "**/SECURITY.md"
+          - all-globs-to-all-files:
+              - "!.github/workflows/**"
+              - "!.github/actions/**"
+
+# --- Tests ---------------------------------------------------------------
 
 tests:
   - changed-files:
       - any-glob-to-any-file:
+          - "tests/**"
+          - "**/test/**"
+          - "spec/**"
+          - "e2e/**"
+          - "cypress/**"
+          - "**/__tests__/**"
           - "**/*.test.*"
           - "**/*.spec.*"
           - "**/*_test.go"
-          - "tests/**"
-          - "**/__tests__/**"
+          - "**/test_*.py"
+          - "**/*_test.py"
+          - "**/conftest.py"
+          - "**/*Test.java"
+          - "**/*Tests.java"
+          - "**/*IT.java"
+          - "**/jest.config.*"
+          - "**/vitest.config.*"
+          - "**/playwright.config.*"
+
+# --- Source ---------------------------------------------------------------
+
+frontend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.vue"
+          - "**/*.svelte"
+          - "**/*.jsx"
+          - "**/*.tsx"
+          - "**/*.html"
+          - "**/*.css"
+          - "**/*.scss"
+          - "**/*.sass"
+          - "**/*.less"
+
+backend:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.java"
+          - "**/*.kt"
+          - "**/*.py"
+          - "**/*.go"
+          - "**/*.rb"
+          - "**/*.php"
+          - "**/*.cs"
+
+shell:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.sh"
+          - "**/*.bash"
+          - "**/*.zsh"
+          - "**/*.fish"
+          - "**/.zshrc"
+          - "**/.zshenv"
+          - "**/.zprofile"
+          - "**/.bashrc"
+          - "**/.bash_profile"
+          - "**/.profile"
+          - "**/.aliases"
+
+notebooks:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.ipynb"
+
+database:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.sql"
+          - "**/migrations/**"
+          - "supabase/**"
+          - "**/schema.prisma"
+
+# --- Build, tooling & dependencies ---------------------------------------
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/package.json"
+          - "**/package-lock.json"
+          - "**/yarn.lock"
+          - "**/pnpm-lock.yaml"
+          - "**/bun.lockb"
+          - "**/pom.xml"
+          - "**/build.gradle"
+          - "**/build.gradle.kts"
+          - "**/gradle.lockfile"
+          - "**/requirements*.txt"
+          - "**/pyproject.toml"
+          - "**/poetry.lock"
+          - "**/uv.lock"
+          - "**/Gemfile"
+          - "**/Gemfile.lock"
+          - "**/go.mod"
+          - "**/go.sum"
+          - "**/Brewfile"
+
+build:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/Dockerfile*"
+          - "**/docker-compose*.y*ml"
+          - "**/.dockerignore"
+          - "**/Makefile"
+          - "**/vite.config.*"
+          - "**/nuxt.config.*"
+          - "**/next.config.*"
+          - "**/webpack.config.*"
+          - "**/rollup.config.*"
+          - "**/tsconfig*.json"
+          - "**/babel.config.*"
+          - "**/.eslintrc*"
+          - "**/eslint.config.*"
+          - "**/.prettierrc*"
+
+assets:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.png"
+          - "**/*.jpg"
+          - "**/*.jpeg"
+          - "**/*.gif"
+          - "**/*.svg"
+          - "**/*.webp"
+          - "**/*.ico"
+          - "**/*.woff"
+          - "**/*.woff2"
+          - "**/*.ttf"
+          - "**/*.otf"
+          - "**/*.mp4"
+
+# --- Agent / editor tooling ----------------------------------------------
+
+claude:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".claude/**"
+          - "**/CLAUDE.md"
+          - "**/AGENTS.md"

@@ -42,7 +42,7 @@ reusable workflows:
 | File | Purpose | Consumed by |
 |---|---|---|
 | `.github-labels.yml` | The canonical label set — each label's name, color, and description. | `label-sync.yml` |
-| `path-labels.yml` | Maps changed-file globs to labels (e.g. `*.md` → `docs`). | `path-labeler.yml` |
+| `path-labels.yml` | Maps changed-file globs to labels (e.g. `**/*.md` → `docs`). | `path-labeler.yml` |
 
 ## Usage in consumer repos
 

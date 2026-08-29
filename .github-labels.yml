@@ -35,6 +35,46 @@
   color: "fbca04"
   description: "CI/CD and workflow changes"
 
+- name: "github-config"
+  color: "bfd4f2"
+  description: "Repository configuration and community health files"
+
 - name: "tests"
   color: "c5def5"
   description: "Test changes"
+
+- name: "frontend"
+  color: "d4c5f9"
+  description: "UI, components, and styling changes"
+
+- name: "backend"
+  color: "5319e7"
+  description: "Server-side and application logic changes"
+
+- name: "shell"
+  color: "006b75"
+  description: "Shell scripts and dotfile changes"
+
+- name: "notebooks"
+  color: "f9d0c4"
+  description: "Jupyter notebook changes"
+
+- name: "database"
+  color: "0e8a16"
+  description: "Schema, migration, and query changes"
+
+- name: "dependencies"
+  color: "0366d6"
+  description: "Dependency manifest and lockfile changes"
+
+- name: "build"
+  color: "b60205"
+  description: "Build, bundler, container, and linter configuration changes"
+
+- name: "assets"
+  color: "e99695"
+  description: "Image, font, and media changes"
+
+- name: "claude"
+  color: "d93f0b"
+  description: "Claude Code and agent configuration changes"
