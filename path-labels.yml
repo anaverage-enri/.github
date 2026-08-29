@@ -27,20 +27,31 @@ ci:
           - ".github/workflows/**"
           - ".github/actions/**"
 
+# Two rules, OR-ed together: the labeler folds bare `changed-files` entries
+# into one implicit `any`.
+#
+# Workflows and actions belong to `ci`, so the first rule excludes them with
+# `all-globs-to-any-file` (all globs must match one and the same file). A
+# separate `all-globs-to-all-files` clause would instead test *every* changed
+# file, dropping the label from any PR that touches a workflow alongside a
+# genuine config file.
+#
+# The second rule is intentionally outside that exclusion: community health
+# files may live at the repo root, not under `.github/`.
 github-config:
-  - all:
-      - changed-files:
-          - any-glob-to-any-file:
-              - ".github/**"
-              - "ISSUE_TEMPLATE/**"
-              - "**/CODEOWNERS"
-              - "**/PULL_REQUEST_TEMPLATE.md"
-              - "**/CODE_OF_CONDUCT.md"
-              - "**/CONTRIBUTING.md"
-              - "**/SECURITY.md"
-          - all-globs-to-all-files:
-              - "!.github/workflows/**"
-              - "!.github/actions/**"
+  - changed-files:
+      - all-globs-to-any-file:
+          - ".github/**"
+          - "!.github/workflows/**"
+          - "!.github/actions/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "ISSUE_TEMPLATE/**"
+          - "**/CODEOWNERS"
+          - "**/PULL_REQUEST_TEMPLATE.md"
+          - "**/CODE_OF_CONDUCT.md"
+          - "**/CONTRIBUTING.md"
+          - "**/SECURITY.md"
 
 # --- Tests ---------------------------------------------------------------
 
