@@ -54,6 +54,12 @@ name: Sync Repository Label Definitions
 
 on:
   workflow_dispatch:
+    inputs:
+      delete-other-labels:
+        description: "Remove labels not declared in the central manifest."
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: read
@@ -63,7 +69,7 @@ jobs:
   sync:
     uses: anaverage-enri/.github/.github/workflows/label-sync.yml@main
     with:
-      delete-other-labels: true
+      delete-other-labels: ${{ inputs.delete-other-labels }}
 ```
 
 **Label PR by Size** — `.github/workflows/size-labeler.yml`
