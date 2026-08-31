@@ -37,7 +37,7 @@ ci:
 # genuine config file.
 #
 # The second rule is intentionally outside that exclusion: community health
-# files may live at the repo root, not under `.github/`.
+# files and git's own config files live at the repo root, not under `.github/`.
 github-config:
   - changed-files:
       - all-globs-to-any-file:
@@ -52,6 +52,10 @@ github-config:
           - "**/CODE_OF_CONDUCT.md"
           - "**/CONTRIBUTING.md"
           - "**/SECURITY.md"
+          - "**/.gitignore"
+          - "**/.gitattributes"
+          - "**/.gitmodules"
+          - "**/.editorconfig"
 
 # --- Tests ---------------------------------------------------------------
 
